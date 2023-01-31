@@ -5,6 +5,9 @@ const hbs = require('express-handlebars');
 const app = express()
 const port = 3000
 
+
+app.use(express.static('./src/public'))
+
 //HTTP middleware logger
 app.use(morgan('combined'))
 
