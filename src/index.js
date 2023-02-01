@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const hbs = require('express-handlebars');
@@ -5,8 +6,12 @@ const hbs = require('express-handlebars');
 const app = express()
 const port = 3000
 
+//Static files
+app.use('/public', express.static('./src/public'));
 
-app.use(express.static('./src/public'))
+//Bootstrap
+app.use('/css', express.static('./node_modules/bootstrap/dist/css'));
+app.use('/js', express.static('./node_modules/bootstrap/dist/js'));
 
 //HTTP middleware logger
 app.use(morgan('combined'))

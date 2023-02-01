@@ -1,11 +1,14 @@
-@import 'variables';
-
+@import "variables";
 h1{
     font-size: 1rem;
-    color: $red-color;
+    color: blue;
 }
 
 h2{
     font-size: 1rem;
-    color: $green-color;
+    color: $red-color;
 }
+
+body {
+    padding: 3rem 1.5rem;
+  }
