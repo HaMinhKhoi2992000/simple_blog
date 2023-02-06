@@ -1,7 +1,14 @@
+const Article = require('../models/Articles');
+
 class SiteController {
     //[GET] /
-    index(req, res) {
-        res.render('home');
+    index(req, res, next) {
+        Article.find({})
+            .lean()
+            .then((articles) => {
+                res.render('home', { articles });
+            })
+            .catch(next);
     }
 
     //[GET] /search
